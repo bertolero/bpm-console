@@ -9,4 +9,4 @@ install:
   - mvn -s ./settings-jboss.xml clean install -pl server/war
   
 script:
-  - mvn -s ./settings-jboss.xml clean install  -Dconsole.profile=fitsaw
+  - mvn -s ./settings-jboss.xml clean install  -Dconsole.profile=rfitsaw
