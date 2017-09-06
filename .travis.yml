@@ -1,0 +1,7 @@
+language: java
+
+install:
+  - mvn -s ./settings-jboss.xml install -Dconsole.profile=fitsaw -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  
+script:
+  - mvn -s ./settings-jboss.xml clean install  -Dconsole.profile=fitsaw
