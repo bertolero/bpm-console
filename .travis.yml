@@ -1,8 +1,10 @@
 language: java
 
 install:
+  - mvn -s ./settings-jboss.xml clean install -pl .
   - mvn -s ./settings-jboss.xml clean install -pl shared
   - mvn -s ./settings-jboss.xml clean install -pl shared/rpc
+  - mvn -s ./settings-jboss.xml clean install -pl server
   - mvn -s ./settings-jboss.xml clean install -pl server/integration
   - mvn -s ./settings-jboss.xml clean install -pl server/war
   
