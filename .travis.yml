@@ -1,5 +1,15 @@
 language: java
 
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/apache-maven-3.2.2"
+
+before_install:
+  - export M2_HOME=$HOME/apache-maven-3.2.2
+  - if [ ! -d $M2_HOME/bin ]; then curl https://archive.apache.org/dist/maven/maven-3/3.2.2/binaries/apache-maven-3.2.2-bin.tar.gz | tar zxf - -C $HOME; fi
+  - export PATH=$M2_HOME/bin:$PATH
+
 install:
   - mvn -s ./settings-jboss.xml clean install -pl .
   - mvn -s ./settings-jboss.xml clean install -pl shared
@@ -9,4 +19,4 @@ install:
   - mvn -s ./settings-jboss.xml clean install -pl server/war
   
 script:
-  - mvn -s ./settings-jboss.xml clean install -Dconsole.profile=riftsaw
+  - mvn -s ./settings-jboss.xml clean deploy -Dconsole.profile=riftsaw

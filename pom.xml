@@ -16,13 +16,13 @@
     </parent>
 
     <url>
-        http://github.com/heiko-braun/bpm-console
+        http://github.com/bertolero/bpm-console
     </url>
 
     <scm>
-        <connection>scm:git:git@github.com:bpmc/bpm-console.git</connection>
-        <developerConnection>scm:git:git@github.com:bpmc/bpm-console.git</developerConnection>
-        <url>https://github.com/bpmc/bpm-console</url>
+        <connection>scm:git:git@github.com:bertolero/bpm-console.git</connection>
+        <developerConnection>scm:git:git@github.com:bertolero/bpm-console.git</developerConnection>
+        <url>http://github.com/bertolero/bpm-console</url>
     </scm>
     
     <organization>
@@ -94,7 +94,7 @@
         <picketbox.version>4.0.19.SP4</picketbox.version>
         <picketlink.version>2.5.3.SP4</picketlink.version>
 
-        <activity.monitor.version>1.2.3.Final</activity.monitor.version>
+        <activity.monitor.version>1.2.3.1-SNAPSHOT</activity.monitor.version>
     </properties>
 
     <modules>
@@ -518,7 +518,6 @@
       <plugins>
         <plugin>
             <artifactId>maven-source-plugin</artifactId>
-            <version>2.1.2</version>
             <executions>
                 <execution>
                     <id>attach-sources</id>
@@ -641,7 +640,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
+      <extensions>
+        <extension>
+          <groupId>io.packagecloud.maven.wagon</groupId>
+          <artifactId>maven-packagecloud-wagon</artifactId>
+          <version>0.0.6</version>
+        </extension>
+      </extensions>
     </build>
 
     <!-- Reporting -->
@@ -709,18 +714,13 @@
 
     <!-- DistributionManagement -->
     <distributionManagement>
-        <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-
+      <repository>
+        <id>packagecloud-bertol</id>
+        <url>packagecloud+https://packagecloud.io/bertol/maven</url>
+      </repository>
+      <snapshotRepository>
+        <id>packagecloud-bertol</id>
+        <url>packagecloud+https://packagecloud.io/bertol/maven</url>
+      </snapshotRepository>
     </distributionManagement>
-
 </project>
