@@ -4,7 +4,6 @@
 
   <modelVersion>4.0.0</modelVersion>
   <name>JBoss BPM - Console::Shared</name>
-  <groupId>org.jboss.bpm</groupId>
   <artifactId>gwt-console-shared</artifactId>
   <packaging>pom</packaging>
 
@@ -13,7 +12,7 @@
   <parent>
     <groupId>org.jboss.bpm</groupId>
     <artifactId>gwt-console-parent</artifactId>
-    <version>2.4.7.Final</version>
+    <version>2.4.7.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
