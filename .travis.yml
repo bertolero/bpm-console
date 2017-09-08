@@ -19,4 +19,4 @@ install:
   - mvn -s ./settings-jboss.xml clean install -pl server/war
   
 script:
-  - mvn -s ./settings-jboss.xml clean deploy -Dconsole.profile=riftsaw
+  - mvn -s ./settings-jboss.xml clean deploy -pl '!dist/fuse61' -Dconsole.profile=riftsaw
